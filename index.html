@@ -38,11 +38,8 @@
       <input style="width: auto; font-size: 1.5rem;" onclick="showSettings(false)" type="submit" title="Close (Esc)"
         value="X" />
     </div>
-    <label class="label">Domain</label>
     <input hidden="hidden" type="text" id="domainInput" value="https://api.openai.com"/>
-    <label class="label">API Key <span style="color: red">*</span></label>
     <input placeholder="OpenAI API Key" type="text" id="apiKeyInput" />
-    <label hidden="hidden" class="label">Model <span style="color: red">*</span></label>
     <select hidden="hidden" id="modelInput" style="font-size: 1.1rem; padding: 3px">
       <option value="gpt-3.5-turbo">ChatGPT ($0.002 / 1K tokens) *</option>
       <option value="text-ada-001">Ada ($0.0004 / 1K tokens)</option>
@@ -50,19 +47,8 @@
       <option value="text-curie-001">Curie ($0.0020 / 1K tokens)</option>
       <option value="text-davinci-003">Davinci ($0.0200 / 1K tokens)</option>
     </select>
-    <label class="label" hidden="hidden">Tokens max</label>
     <input type="text" hidden="hidden" id="maxTokensInput" />
-    <label class="label" hidden="hidden">Temperature</label>
     <input type="text" hidden="hidden" id="temperatureInput" />
-    <label hidden="hidden" class="label" style="display: flex; align-items: center;" title="Text to speech">
-      "Text to speech"
-      <input hidden="hidden" id="ttsInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
-    </label>
-    <label hidden="hidden" class="label" style="display: flex; align-items: center;" title="N'utilisez le chuchotement que pour la reconnaissance vocale">
-      N'utilisez que le chuchotement
-      <input hidden="hidden" id="whisperInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
-    </label>
-    <label hidden="hidden" class="label">Langue de reconnaissance</span></label>
     <select hidden="hidden" id="recogLangInput" style="font-size: 1.1rem; padding: 3px">
       <option hidden="hidden" value="en">EN</option>
       <!--
@@ -74,7 +60,7 @@
       <option value="en-UK">EN-UK</option>
       -->
     </select>
-    <label hidden="hidden" class="label">What is your assistant</label>
+    <label hidden="hidden" class="label">Comment est votre assistant ?</label>
     <textarea hidden="hidden" id="systemPromptInput"></textarea>
     <label hidden="hidden" style="display: flex; align-items: center;" title="Dans un fil, chaque session est une nouvelle session (ctrl + ;)">
       Long conversation
@@ -94,10 +80,10 @@
 <div id="historyModal" class="modal" style="display: none;">
   <div id="history" class="model-body">
     <div style="display: flex; align-items: center;">
-      <h2 style="display: inline-block">History</h2>
+      <h2 style="display: inline-block">Historique</h2>
       <div style="flex: 1;"></div>
       <input style="width: auto; font-size: 1.5rem;" onclick="showHistory(false)" type="submit" title="Ferme (Esc)"
-        value="☕" />
+        value="X" />
     </div>
     <input style="width: auto" onclick="deleteAllHistory()" type="submit" title="Supprimer tout l'historique"
       value="Supprimer tout" />

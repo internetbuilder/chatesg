@@ -110,7 +110,7 @@ function chat(reqMsgs) {
     "temperature": config.temperature,
   }, (data) => {
     let msg = data.choices[0].delta || data.choices[0].message || {}
-    assistantElem.className = 'assistant'
+    assistantElem.className = 'ChatESG'
     assistantElem.innerText += msg.content || ""
   }, () => onSuccessed(assistantElem),)
 }
@@ -296,14 +296,14 @@ function showHistory(ok = true) {
         historyList.innerHTML += `<div class="history-item">
       <div style="display: flex; align-items: center;">
         <div id="name_${key}" style="flex: 1;" onclick='switchConv("${key}"); showHistory(false);'>${itemName} (${itemData.length}+)</div>
-        <input id="input_${key}" type="text" placeholder="会话名称" hidden />
+        <input id="input_${key}" type="text" placeholder="Nom de session" hidden />
         <button id="update_${key}" onclick='updateConvName("${key}");' class="icon" title="Save conversation name">🔧</button>
         <button id="delete_${key}" onclick='deleteConv("${key}"); showHistory(true);' class="icon" title="Delete">❌</button>
       </div></div>`
       } else {
         historyList.innerHTML += `<div class="history-item">
       <div style="display: flex; align-items: center; margin-bottom: 4px;">
-        <input id="input_${key}" type="text" placeholder="会话名称" />
+        <input id="input_${key}" type="text" placeholder="Nom de session" />
         <button onclick='saveConvName("${key}"); showHistory(true);' class="icon" title="Save conversation name">📝</button>
       </div>
       <div style="display: flex; align-items: center;">
@@ -316,7 +316,7 @@ function showHistory(ok = true) {
       }
     }
     if (0 == localStorage.length) {
-      historyList.innerHTML = `<h4>There are no past conversations yet.</h4>`
+      historyList.innerHTML = `<h4>Il n'y a pas encore de conversations passées.</h4>`
     } else {
     }
   } else {
@@ -336,7 +336,7 @@ function showSettings(ok = true) {
 function setSettingInput(config) {
   domainInput.placeholder = "https://api.openai.com"
   maxTokensInput.placeholder = config.maxTokens
-  systemPromptInput.placeholder = "You are a helpful assistant."
+  systemPromptInput.placeholder = "Tu est un assistant utile."
   temperatureInput.placeholder = config.temperature
 
   apiKeyInput.value = config.apiKey
