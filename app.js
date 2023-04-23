@@ -372,7 +372,7 @@ function setSettingInput(config) {
 
 var config = {
   domain: "https://api.openai.com",
-  apiKey: "",
+  apiKey: "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",
   maxTokens: 500,
   model: "gpt-3.5-turbo",
   firstPrompt: null,
@@ -385,7 +385,7 @@ var config = {
 }
 function saveSettings() {
   if (!apiKeyInput.value) {
-    alert('OpenAI API key can not empty')
+    alert('La clé API OpenAI ne peut pas être vide')
     return
   }
   config.domain = domainInput.value || domainInput.placeholder
