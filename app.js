@@ -372,7 +372,7 @@ function setSettingInput(config) {
 
 var config = {
   domain: "https://api.openai.com",
-  apiKey: "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",
+  apiKey: "",
   maxTokens: 500,
   model: "gpt-3.5-turbo",
   firstPrompt: null,
