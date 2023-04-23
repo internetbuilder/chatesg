@@ -38,33 +38,33 @@
       <input style="width: auto; font-size: 1.5rem;" onclick="showSettings(false)" type="submit" title="Close (Esc)"
         value="X" />
     </div>
-    <label class="label">Domain</label>
+    <label class="label" hidden="hidden">Domain</label>
     <input hidden="hidden" type="text" id="domainInput" value="https://api.openai.com"/>
-    <label class="label">API Key <span style="color: red">*</span></label>
-    <input placeholder="OpenAI API Key" type="text" id="apiKeyInput" value="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" />
-    <label class="label">Model <span style="color: red">*</span></label>
-    <select id="modelInput" style="font-size: 1.1rem; padding: 3px">
+    <label class="label" hidden="hidden">API Key <span style="color: red">*</span></label>
+    <input hidden="hidden" placeholder="OpenAI API Key" type="text" id="apiKeyInput" value="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" />
+    <label hidden="hidden" class="label">Model <span style="color: red">*</span></label>
+    <select hidden="hidden" id="modelInput" style="font-size: 1.1rem; padding: 3px">
       <option value="gpt-3.5-turbo">ChatGPT ($0.002 / 1K tokens) *</option>
       <option value="text-ada-001">Ada ($0.0004 / 1K tokens)</option>
       <option value="text-babbage-001">Babbage ($0.0005 / 1K tokens)</option>
       <option value="text-curie-001">Curie ($0.0020 / 1K tokens)</option>
       <option value="text-davinci-003">Davinci ($0.0200 / 1K tokens)</option>
     </select>
-    <label class="label">Tokens max</label>
-    <input type="text" id="maxTokensInput" />
-    <label class="label">Temperature</label>
-    <input type="text" id="temperatureInput" />
-    <label class="label" style="display: flex; align-items: center;" title="Text to speech">
+    <label class="label" hidden="hidden">Tokens max</label>
+    <input type="text" hidden="hidden" id="maxTokensInput" />
+    <label class="label" hidden="hidden">Temperature</label>
+    <input type="text" hidden="hidden" id="temperatureInput" />
+    <label hidden="hidden" class="label" style="display: flex; align-items: center;" title="Text to speech">
       "Text to speech"
-      <input id="ttsInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
+      <input hidden="hidden" id="ttsInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
     </label>
-    <label class="label" style="display: flex; align-items: center;" title="N'utilisez le chuchotement que pour la reconnaissance vocale">
+    <label hidden="hidden" class="label" style="display: flex; align-items: center;" title="N'utilisez le chuchotement que pour la reconnaissance vocale">
       N'utilisez que le chuchotement
-      <input id="whisperInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
+      <input hidden="hidden" id="whisperInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
     </label>
-    <label class="label">Langue de reconnaissance</span></label>
-    <select id="recogLangInput" style="font-size: 1.1rem; padding: 3px">
-      <option value="en">EN</option>
+    <label hidden="hidden" class="label">Langue de reconnaissance</span></label>
+    <select hidden="hidden" id="recogLangInput" style="font-size: 1.1rem; padding: 3px">
+      <option hidden="hidden" value="en">EN</option>
       <!--
       <option value="zh">ZH</option>
       <option value="zh-CN">ZH-CN</option>
@@ -74,15 +74,15 @@
       <option value="en-UK">EN-UK</option>
       -->
     </select>
-    <label class="label">What is your assistant</label>
-    <textarea id="systemPromptInput"></textarea>
-    <label style="display: flex; align-items: center;" title="Dans un fil, chaque session est une nouvelle session (ctrl + ;)">
+    <label hidden="hidden" class="label">What is your assistant</label>
+    <textarea hidden="hidden" id="systemPromptInput"></textarea>
+    <label hidden="hidden" style="display: flex; align-items: center;" title="Dans un fil, chaque session est une nouvelle session (ctrl + ;)">
       Long conversation
-      <input id="multiConvInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
+      <input hidden="hidden" id="multiConvInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
     </label>
-    <details id="promptDetails" style="margin: 20px 0;">
-      <summary>Assistant Public Prompts</summary>
-      <div id="promptList"></div>
+    <details hidden="hidden" id="promptDetails" style="margin: 20px 0;">
+      <summary hidden="hidden">Assistant Public Prompts</summary>
+      <div hidden="hidden" id="promptList"></div>
     </details>
     <div style="display: flex; align-items: center; margin: 30px 0;">
       <div style="flex: 1;"></div>

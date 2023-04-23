@@ -406,7 +406,7 @@ function saveSettings() {
   box.firstChild.innerHTML = config.firstPrompt.content
   localStorage.setItem("conversation_config", JSON.stringify(config))
   showSettings(false)
-  addItem('system', 'Update successed')
+  addItem('system', 'Mise à jour réussie')
 }
 
 function onSelectPrompt(index) {
@@ -432,7 +432,7 @@ function init() {
   if (!('speechSynthesis' in window)) {
     ttsInput.disabled = false
     ttsInput.onclick = () => {
-      alert("The current browser does not support text-to-speech");
+      alert("Le navigateur actuel ne prend pas en charge text-to-speech");
     }
   }
 
@@ -460,7 +460,7 @@ const promptDiv = (index, prompt) => {
 <div style="display: flex;">
   <strong style="flex: 1;">${prompt.title}</strong>
   <label style="display:  ${prompt.multi ? "" : "none"}; align-items: center; margin: 0">
-    <span style="white-space: nowrap;">Long conversation</span>
+    <span style="white-space: nowrap;">Conversation longue</span>
     <input type="checkbox" style="width: 1.1rem; height: 1.1rem;" checked disabled/>
   </label>
 </div>
