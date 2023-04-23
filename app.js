@@ -375,7 +375,7 @@ var config = {
   apiKey: "",
   maxTokens: 500,
   model: "gpt-3.5-turbo",
-  firstPrompt: "allllllllllo",
+  firstPrompt: null,
   multi: true,
   stream: true,
   prompts: [],
