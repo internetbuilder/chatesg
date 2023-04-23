@@ -153,7 +153,7 @@ function send(reqUrl, body, onMessage, scussionCall) {
     console.error(data);
     loader.hidden = true
     if (!data) {
-      addItem("system", `Unable to access OpenAI, please check your network.`)
+      addItem("system", `Impossible d'accéder à OpenAI, veuillez vérifier votre réseau.`)
     } else {
       try {
         let openai = JSON.parse(data)
@@ -585,45 +585,45 @@ const _speechToText = () => {
 
 function _speechToText1() {
   loader.hidden = false
-  // 获取音频流
+  // obtenir un flux audio
   navigator.mediaDevices.getUserMedia({ audio: true })
     .then(function (stream) {
-      // 创建 MediaRecorder 对象
+      // Créer un objet MediaRecorder
       const mediaRecorder = new MediaRecorder(stream);
-      // 创建 AudioContext 对象
+      // Créer un objet AudioContext
       const audioContext = new AudioContext();
-      // 创建 MediaStreamAudioSourceNode 对象
+      // Créer un objet MediaStreamAudioSourceNode
       const source = audioContext.createMediaStreamSource(stream);
-      // 创建 MediaStreamAudioDestinationNode 对象
+      // Créer un objet MediaStreamAudioDestinationNode
       const destination = audioContext.createMediaStreamDestination();
-      // 将 MediaStreamAudioDestinationNode 对象连接到 MediaStreamAudioSourceNode 对象
+      // Connectez l'objet MediaStreamAudioDestinationNode à l'objet MediaStreamAudioSourceNode
       source.connect(destination);
-      // 将 MediaStreamAudioDestinationNode 对象的 MediaStream 传递给 MediaRecorder 对象
+      // Passez le MediaStream de l'objet MediaStreamAudioDestinationNode à l'objet MediaRecorder
       mediaRecorder.stream = destination.stream;
-      // 创建一个空的音频缓冲区
+      // Créer un tampon audio vide
       let chunks = [];
-      // 开始录音
+      // commencer l'enregistrement
       mediaRecorder.start();
-      // 监听录音数据
+      // Surveiller les données d'enregistrement
       mediaRecorder.addEventListener('dataavailable', function (event) {
         chunks.push(event.data);
       });
-      // 停止录音
+      // arrête d'enregistrer
       mediaRecorder.addEventListener('stop', function () {
-        // 将录音数据合并为一个 Blob 对象
+        // Fusionner les données d'enregistrement dans un objet Blob
         const blob = new Blob(chunks, { type: 'audio/mp3' });
-        // 创建一个 Audio 对象
+        // Créer un objet audio
         const audio = new Audio();
-        // 将 Blob 对象转换为 URL
+        // Convertir un objet Blob en URL
         const url = URL.createObjectURL(blob);
-        // 设置 Audio 对象的 src 属性为 URL
+        // Définissez l'attribut src de l'objet Audio sur URL
         audio.src = url;
-        // 播放录音
+        // jouer l'enregistrement
         audio.play();
         // asr
         transcriptions(getRecordFile(chunks, mediaRecorder.mimeType))
       });
-      // 5 秒后停止录音
+      // Arrêter l'enregistrement après 5 secondes
       setTimeout(function () {
         mediaRecorder.stop();
         stream.getTracks().forEach(track => track.stop());
