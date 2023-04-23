@@ -48,7 +48,17 @@
       <option value="text-davinci-003">Davinci ($0.0200 / 1K tokens)</option>
     </select>
     <input type="text" hidden="hidden" id="maxTokensInput" />
+
     <input type="text" hidden="hidden" id="temperatureInput" />
+    <label hidden="hidden" class="label" style="display: flex; align-items: center;" title="Text to speech">
+      "Text to speech"
+      <input hidden="hidden" id="ttsInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
+    </label>
+    <label hidden="hidden" class="label" style="display: flex; align-items: center;" title="N'utilisez le chuchotement que pour la reconnaissance vocale">
+      N'utilisez que le chuchotement
+      <input hidden="hidden" id="whisperInput" type="checkbox" style="width: 1.2rem; height: 1.2rem; margin-left: 10px;" />
+    </label>
+    <label hidden="hidden" class="label">Langue de reconnaissance</span></label>
     <select hidden="hidden" id="recogLangInput" style="font-size: 1.1rem; padding: 3px">
       <option hidden="hidden" value="en">EN</option>
       <!--
