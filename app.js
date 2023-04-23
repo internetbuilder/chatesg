@@ -375,12 +375,12 @@ var config = {
   apiKey: "",
   maxTokens: 500,
   model: "gpt-3.5-turbo",
-  firstPrompt: null,
+  firstPrompt: "allllllllllo",
   multi: true,
   stream: true,
   prompts: [],
   temperature: 0.5,
-  tts: false,
+  tts: true,
   onlyWhisper: false,
 }
 function saveSettings() {
